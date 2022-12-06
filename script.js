@@ -27,8 +27,13 @@ function userCriteriaSelect() {
   var userUppercase = confirm("Include uppercase letters?");
 }
 userCriteriaSelect();
-// activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected
+/* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
 
+var nameVariableSomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
+var randomSpecial = Math.floor(Math.random()* SPECIAL_CHARS[SPECIAL_CHARS.length]) 
+
+IF STATEMENT: user clicks through prompt array choices, add or do not add array to possible character list (4 IFs needed)
+*/
 
 // Write password to the #password input
 function writePassword() {
