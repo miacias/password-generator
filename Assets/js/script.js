@@ -9,32 +9,46 @@ const UPPERCASE_CHARS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
 const ALL_CHARS = [SPECIAL_CHARS, NUMERIC_CHARS, LOWERCASE_CHARS, UPPERCASE_CHARS];
 
 // User is provided password criteria
-function userCriteria() {
+function limitCheck() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
-  if (userLimit !== CHARS_LIMIT) {
-    userLimit = prompt("This number must be between 8 and 128 to continue. Please choose from 8 to 128 characters to include.");
-  } else {
-    return userCriteria();
+  if (userLimit < 8 || userLimit > 128) {
+    userLimit = alert("This number must be between 8 and 128 to continue.");
+    return limitCheck();
   }
+}
+limitCheck();
+
+function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
     selectedCharacters.push(ALL_CHARS[0]);
-  } 
+  }
+}
+specialCheck();
+
+function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
     selectedCharacters.push(ALL_CHARS[1]);
   } 
+}
+numericCheck();
+
+function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
     selectedCharacters.push(ALL_CHARS[2]);
-  } 
+  }
+}
+lowercaseCheck();
+
+function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
-  return userLimit;
   if (userUppercase) {
     selectedCharacters.push(ALL_CHARS[3]);
   }
 }
-userCriteria();
+uppercaseCheck();
 /* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
 
 var nameVariableSomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
