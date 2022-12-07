@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // variable called generateBtn looks at the HTML document using a querySelector and finds the ID "generate." ID "generate" is attached to the on-screen generate password BUTTON
 
-const CHARS_LIMIT = (128 >= Math.floor(Number) >= 8);
+// const CHARS_LIMIT = (128 >= Math.floor(Number) >= 8);
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -62,6 +62,7 @@ function userCriteria() {
   uppercaseCheck();
   empty();
 }
+userCriteria();
 
 /* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
 
@@ -79,7 +80,7 @@ CHARS[CHARS.length] === select character based on the lenfth of the character li
 
 function generatePassword() {
   for (var i = 0; i = limitCheck; i++) {
-    Math.floor(Math.random() * selectedCharacters) * limitCheck
+    Math.floor(Math.random() * selectedCharacters)
   }
   // use Math to randomly choose characters from selectedCharacters
   // Math.floor = round down to nearest whole
