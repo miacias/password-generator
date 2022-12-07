@@ -7,6 +7,7 @@ const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const UPPERCASE_CHARS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; // there may be a method that can consolidate this somehow
 const ALL_CHARS = [SPECIAL_CHARS, NUMERIC_CHARS, LOWERCASE_CHARS, UPPERCASE_CHARS];
+const selectedCharacters = [];
 
 // User is provided password criteria
 function limitCheck() {
@@ -49,9 +50,20 @@ function uppercaseCheck() {
   }
 }
 uppercaseCheck();
+
+function empty() {
+  if (selectedCharacters === null || undefined) {
+    alert("Password has no character types added. Please try again.");
+    specialCheck();
+    numericCheck();
+    lowercaseCheck();
+    uppercaseCheck();
+  }
+}
+empty();
 /* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
 
-var nameVariableSomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
+var nameVariableSnomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
 var randomSpecial = Math.floor(Math.random()* SPECIAL_CHARS[SPECIAL_CHARS.length]) 
 
 math.floor === round down to nearest whole number
@@ -61,15 +73,13 @@ CHARS[CHARS.length] === select character based on the lenfth of the character li
 if userSpecial true, add randomSpecial. else if userNumeric is true, add randomNumeric.
 */
 
-// var selectedCharacters
-
 //   } else {
 //     alert("No character-type selected. Please try again and select at least one type of character."); // insert failure case (in case user says "no" to everything)
 
 
 function generatePassword() {
-  for (var i = 0; i = selectedLimit; i++) {
-    Math.floor(Math.random() * selectedCharacters) * userLimit
+  for (var i = 0; i = limitCheck; i++) {
+    Math.floor(Math.random() * selectedCharacters) * limitCheck
   }
   // use Math to randomly choose characters from selectedCharacters
   // Math.floor = round down to nearest whole
