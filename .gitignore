@@ -1,7 +1,11 @@
+# other
+.DS_Store
+.vscode
+
 # Logs
 logs
-*.log
 npm-debug.log*
+*.log
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
