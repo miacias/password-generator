@@ -1,18 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // variable called generateBtn looks at the HTML document using a querySelector and finds the ID "generate." ID "generate" is attached to the on-screen generate password BUTTON
 
-const CHARS_LIMIT = [];
+const CHARS_LIMIT = 128 >= CHARS_LIMIT >= 8;
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const UPPERCASE_CHARS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; // there may be a method that can consolidate this somehow
 const ALL_CHARS = [SPECIAL_CHARS, NUMERIC_CHARS, LOWERCASE_CHARS, UPPERCASE_CHARS];
 
-/*
---OBJECTS--
-1. totalChars { } MIN_CHARS: 8, MAX_CHARS: 128
-*/
-
+// User is provided password criteria
 function userCriteria() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
   var userSpecial = confirm("Would you like to include special characters?");
@@ -31,13 +27,13 @@ math.random === randomize 0 to 0.99999repeating
 CHARS[CHARS.length] === select character based on the lenfth of the character list?
 
 if userSpecial true, add randomSpecial. else if userNumeric is true, add randomNumeric.
-
 */
+
 var selectedCharacters
 
 function userSelections() {
-  if (128 >= userLimit >= 8) {
-    selectedLimit = userLimit
+  if (userLimit === CHARS_LIMIT) {
+    selectedLimit = userLimit;
   } else {
     userLimit = prompt("Please only choose from 8 to 128 characters to include.");
   }
@@ -58,13 +54,10 @@ function userSelections() {
 }
 userSelections();
 
-// need to add variable selectedLimit as well as creating CHARS_LIMIT definition
-
-
 
 function generatePassword() {
   for (var i = 0; i = selectedLimit; i++) {
-
+    Math.floor(Math.random() * selectedCharacters) * userLimit
   }
   // use Math to randomly choose characters from selectedCharacters
   // Math.floor = round down to nearest whole
