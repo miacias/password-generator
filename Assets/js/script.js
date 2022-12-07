@@ -64,8 +64,7 @@ function userCriteria() {
 }
 userCriteria();
 
-/* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
-
+/*
 var nameVariableSnomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
 var randomSpecial = Math.floor(Math.random()* SPECIAL_CHARS[SPECIAL_CHARS.length]) 
 
@@ -73,10 +72,6 @@ math.floor === round down to nearest whole number
 math.random === randomize 0 to 0.99999repeating
 CHARS[CHARS.length] === select character based on the lenfth of the character list?
 */
-
-//   } else {
-//     alert("No character-type selected. Please try again and select at least one type of character."); // insert failure case (in case user says "no" to everything)
-
 
 function generatePassword() {
   for (var i = 0; i = limitCheck; i++) {
