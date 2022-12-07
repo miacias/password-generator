@@ -80,11 +80,9 @@ CHARS[CHARS.length] === select character based on the lenfth of the character li
 
 function generatePassword() {
   for (var i = 0; i = limitCheck; i++) {
-    Math.floor(Math.random() * selectedCharacters)
+    var randomizer = Math.floor(Math.random() * selectedCharacters.length); //create a randomizer based on a whole number of the length of selected characters
+    // randomize the amount of times chosen from limitCheck and append with .push. then print to string.
   }
-  // use Math to randomly choose characters from selectedCharacters
-  // Math.floor = round down to nearest whole
-  // Math.random() = randomizer from 0 to 0.9999
 }
 generatePassword();
 
