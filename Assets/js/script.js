@@ -9,7 +9,6 @@ const UPPERCASE_CHARS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
 const ALL_CHARS = [SPECIAL_CHARS, NUMERIC_CHARS, LOWERCASE_CHARS, UPPERCASE_CHARS];
 const selectedCharacters = [];
 
-// User is provided password criteria
 function limitCheck() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
   if (userLimit < 8 || userLimit > 128) {
@@ -17,7 +16,6 @@ function limitCheck() {
     return limitCheck();
   }
 }
-limitCheck();
 
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
@@ -25,7 +23,6 @@ function specialCheck() {
     selectedCharacters.push(ALL_CHARS[0]);
   }
 }
-specialCheck();
 
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
@@ -33,7 +30,6 @@ function numericCheck() {
     selectedCharacters.push(ALL_CHARS[1]);
   } 
 }
-numericCheck();
 
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
@@ -41,7 +37,6 @@ function lowercaseCheck() {
     selectedCharacters.push(ALL_CHARS[2]);
   }
 }
-lowercaseCheck();
 
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
@@ -49,18 +44,25 @@ function uppercaseCheck() {
     selectedCharacters.push(ALL_CHARS[3]);
   }
 }
-uppercaseCheck();
 
+// in case user mistakenly does not select any character type to be included in the password
 function empty() {
-  if (selectedCharacters === null || undefined) {
-    alert("Password has no character types added. Please try again.");
-    specialCheck();
-    numericCheck();
-    lowercaseCheck();
-    uppercaseCheck();
+  if (selectedCharacters.length === 0) {
+    alert("Password has no character types added. Please try again with at least one character type.");
+    userCriteria();
   }
 }
-empty();
+
+// User is provided password criteria
+function userCriteria() {
+  limitCheck();
+  specialCheck();
+  numericCheck();
+  lowercaseCheck();
+  uppercaseCheck();
+  empty();
+}
+
 /* activate or deactivate the sections of ALL_CHARS based on userCriteriaSelect, then multiply by CHARS_LIMIT to get correct number of characters allowed and selected.
 
 var nameVariableSnomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
@@ -69,8 +71,6 @@ var randomSpecial = Math.floor(Math.random()* SPECIAL_CHARS[SPECIAL_CHARS.length
 math.floor === round down to nearest whole number
 math.random === randomize 0 to 0.99999repeating
 CHARS[CHARS.length] === select character based on the lenfth of the character list?
-
-if userSpecial true, add randomSpecial. else if userNumeric is true, add randomNumeric.
 */
 
 //   } else {
@@ -87,15 +87,15 @@ function generatePassword() {
 }
 generatePassword();
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called
+// generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called
 
