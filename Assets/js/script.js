@@ -15,39 +15,30 @@ function limitCheck() {
     return limitCheck();
   }
 }
-
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
-    // selectedCharacters.push(ALL_CHARS[0]);
-    selectedCharacters.push(SPECIAL_CHARS);
+    selectedCharacters.push(ALL_CHARS[0]);
   }
 }
-
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
-    // selectedCharacters.push(ALL_CHARS[1]);
-    selectedCharacters.push(NUMERIC_CHARS);
+    selectedCharacters.push(ALL_CHARS[1]);
   } 
 }
-
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
-    // selectedCharacters.push(ALL_CHARS[2]);
-    selectedCharacters.push(LOWERCASE_CHARS);
+    selectedCharacters.push(ALL_CHARS[2]);
   }
 }
-
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
   if (userUppercase) {
-    // selectedCharacters.push(ALL_CHARS[3]);
-    selectedCharacters.push(UPPERCASE_CHARS);
+    selectedCharacters.push(ALL_CHARS[3]);
   }
 }
-
 // in case user mistakenly does not select any character type to be included in the password
 function empty() {
   if (selectedCharacters.length === 0) {
@@ -66,30 +57,25 @@ function userCriteria() {
   empty();
 }
 userCriteria();
+// find a way to combine fuction userCriteria and function generatePassword via IF STATEMENTS
 
-/*
-var nameVariableSnomething = Math.floor(Math.random()* ALL_CHARS[?????]); -> this could be too complicated
-var randomSpecial = Math.floor(Math.random()* SPECIAL_CHARS[SPECIAL_CHARS.length]) 
-
-math.floor === round down to nearest whole number
-math.random === randomize 0 to 0.99999repeating
-CHARS[CHARS.length] === select character based on the lenfth of the character list?
-*/
 
 function generatePassword() {
   // for (var i = 0; i = limitCheck; i++) {
-    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[0].length) /18 ); // produces 1 special character??
-    console.log (Math.floor((Math.random() * selectedCharacters[0].length) /18 ));
+  
+    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[0].length)); // produces 1 special character
+    console.log (Math.floor((Math.random() * selectedCharacters[0].length)));
     
-    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[1].length) /4 ); // produces 1 numeric character??
-    console.log (Math.floor((Math.random() * selectedCharacters[1].length)) /4 );
+    var numericRandomizer = Math.floor((Math.random() * selectedCharacters[1].length)); // produces 1 numeric character
+    console.log (Math.floor((Math.random() * selectedCharacters[1].length)));
    
-    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[2].length) / 18); // produces 1 lowercase character??
-    console.log (Math.floor((Math.random() * selectedCharacters[2].length) / 18));
+    var lowercaseRandomizer = Math.floor((Math.random() * selectedCharacters[2].length)); // produces 1 lowercase character
+    console.log (Math.floor((Math.random() * selectedCharacters[2].length)));
    
-    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[3].length) / 18); // produces 1 uppercase character??
-    console.log (Math.floor((Math.random() * selectedCharacters[3].length) / 18));
+    var uppercaseRandomizer = Math.floor((Math.random() * selectedCharacters[3].length)); // produces 1 uppercase character
+    console.log (Math.floor((Math.random() * selectedCharacters[3].length)));
     // randomize the amount of times chosen from limitCheck and append with .push. then print to string.
+    // currently breaks at reading "lenght" IF user selects NOT to include a given character type. only breaks for the type(s) excluded
 }
 generatePassword();
 
