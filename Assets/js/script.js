@@ -1,7 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // variable called generateBtn looks at the HTML document using a querySelector and finds the ID "generate." ID "generate" is attached to the on-screen generate password BUTTON
 
-// const CHARS_LIMIT = (128 >= Math.floor(Number) >= 8);
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -20,28 +19,32 @@ function limitCheck() {
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
-    selectedCharacters.push(ALL_CHARS[0]);
+    // selectedCharacters.push(ALL_CHARS[0]);
+    selectedCharacters.push(SPECIAL_CHARS);
   }
 }
 
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
-    selectedCharacters.push(ALL_CHARS[1]);
+    // selectedCharacters.push(ALL_CHARS[1]);
+    selectedCharacters.push(NUMERIC_CHARS);
   } 
 }
 
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
-    selectedCharacters.push(ALL_CHARS[2]);
+    // selectedCharacters.push(ALL_CHARS[2]);
+    selectedCharacters.push(LOWERCASE_CHARS);
   }
 }
 
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
   if (userUppercase) {
-    selectedCharacters.push(ALL_CHARS[3]);
+    // selectedCharacters.push(ALL_CHARS[3]);
+    selectedCharacters.push(UPPERCASE_CHARS);
   }
 }
 
@@ -74,10 +77,19 @@ CHARS[CHARS.length] === select character based on the lenfth of the character li
 */
 
 function generatePassword() {
-  for (var i = 0; i = limitCheck; i++) {
-    var randomizer = Math.floor(Math.random() * selectedCharacters.length); //create a randomizer based on a whole number of the length of selected characters
+  // for (var i = 0; i = limitCheck; i++) {
+    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[0].length) /18 ); // produces 1 special character??
+    console.log (Math.floor((Math.random() * selectedCharacters[0].length) /18 ));
+    
+    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[1].length) /4 ); // produces 1 numeric character??
+    console.log (Math.floor((Math.random() * selectedCharacters[1].length)) /4 );
+   
+    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[2].length) / 18); // produces 1 lowercase character??
+    console.log (Math.floor((Math.random() * selectedCharacters[2].length) / 18));
+   
+    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[3].length) / 18); // produces 1 uppercase character??
+    console.log (Math.floor((Math.random() * selectedCharacters[3].length) / 18));
     // randomize the amount of times chosen from limitCheck and append with .push. then print to string.
-  }
 }
 generatePassword();
 
