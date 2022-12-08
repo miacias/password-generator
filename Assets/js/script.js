@@ -5,11 +5,12 @@ const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", 
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const UPPERCASE_CHARS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; // there may be a method that can consolidate this somehow
-const ALL_CHARS = [SPECIAL_CHARS, NUMERIC_CHARS, LOWERCASE_CHARS, UPPERCASE_CHARS];
-const selectedCharacters = [];
+var selectedCharacters = [];
+var userLimit
+var password
 
 function limitCheck() {
-  var userLimit = prompt("Please choose from 8 to 128 characters to include.");
+  userLimit = prompt("Please choose from 8 to 128 characters to include.");
   if (userLimit < 8 || userLimit > 128) {
     userLimit = alert("This number must be between 8 and 128 to continue.");
     return limitCheck();
@@ -18,25 +19,25 @@ function limitCheck() {
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
-    selectedCharacters.push(ALL_CHARS[0]);
+    selectedCharacters = selectedCharacters.concat(SPECIAL_CHARS);
   }
 }
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
-    selectedCharacters.push(ALL_CHARS[1]);
+    selectedCharacters = selectedCharacters.concat(NUMERIC_CHARS);
   } 
 }
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
-    selectedCharacters.push(ALL_CHARS[2]);
+    selectedCharacters = selectedCharacters.concat(LOWERCASE_CHARS);
   }
 }
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
   if (userUppercase) {
-    selectedCharacters.push(ALL_CHARS[3]);
+    selectedCharacters = selectedCharacters.concat(UPPERCASE_CHARS);
   }
 }
 // in case user mistakenly does not select any character type to be included in the password
@@ -47,47 +48,31 @@ function empty() {
   }
 }
 
-// User is provided password criteria
-function userCriteria() {
+// calls functions where user sets a character quantity limit and selects character types to include
+function generatePassword() {
   limitCheck();
   specialCheck();
   numericCheck();
   lowercaseCheck();
   uppercaseCheck();
   empty();
+  // sets password as an empty array
+  password = [];
+  // randomly chooses an index location of selectedCharacters up to the number of the userLimit
+  for (var i = 0; i < userLimit; i++) {
+    var randomizer = Math.floor(Math.random() * selectedCharacters.length);
+    password.push(selectedCharacters[randomizer]);
+  }
+  // converts password from an array to a string
+  password = password.join("");
 }
-userCriteria();
-// find a way to combine fuction userCriteria and function generatePassword via IF STATEMENTS
 
-
-function generatePassword() {
-  // for (var i = 0; i = limitCheck; i++) {
-  
-    var specialRandomizer = Math.floor((Math.random() * selectedCharacters[0].length)); // produces 1 special character
-    console.log (Math.floor((Math.random() * selectedCharacters[0].length)));
-    
-    var numericRandomizer = Math.floor((Math.random() * selectedCharacters[1].length)); // produces 1 numeric character
-    console.log (Math.floor((Math.random() * selectedCharacters[1].length)));
-   
-    var lowercaseRandomizer = Math.floor((Math.random() * selectedCharacters[2].length)); // produces 1 lowercase character
-    console.log (Math.floor((Math.random() * selectedCharacters[2].length)));
-   
-    var uppercaseRandomizer = Math.floor((Math.random() * selectedCharacters[3].length)); // produces 1 uppercase character
-    console.log (Math.floor((Math.random() * selectedCharacters[3].length)));
-    // randomize the amount of times chosen from limitCheck and append with .push. then print to string.
-    // currently breaks at reading "lenght" IF user selects NOT to include a given character type. only breaks for the type(s) excluded
-}
-generatePassword();
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
+// Write password to the #password input
+function writePassword() {
+   generatePassword();
+   var passwordText = document.querySelector("#password");
+   passwordText.value = password;
+ }
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called
-
+generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
