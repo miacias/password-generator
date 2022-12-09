@@ -1,3 +1,12 @@
+:root {
+  --dark-purple: #5c4369;
+  --light-purple: #9e85ab;
+  --white-purple: #b8a5c2;
+  --white: white;
+  --sunflower: #ffdd54;
+  --blue-gray: #3b4954;
+}
+
 *,
 *::before,
 *::after {
@@ -14,7 +23,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: var(--dark-purple);
 }
 
 .wrapper {
@@ -27,15 +36,15 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--white);
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--white-purple);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--blue-gray);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -74,11 +83,11 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: var(--sunflower);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: var(--blue-gray);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
