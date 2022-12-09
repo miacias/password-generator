@@ -8,10 +8,10 @@ var selectedCharacters = [];
 
 function limitCheck() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
-  if (userLimit < 8 || userLimit > 128) {
-    userLimit = alert("This number must be between 8 and 128 to continue.");
-    limitCheck();
-  }
+    if (userLimit !== number || userLimit < 8 || userLimit > 128) {
+      userLimit = alert("This number must be between 8 and 128 to continue.");
+      limitCheck();
+    }
   return userLimit; // returns a value from the limitCheck function
 }
 
