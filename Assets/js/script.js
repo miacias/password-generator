@@ -53,13 +53,18 @@ function empty() {
 }
 
 // calls functions where user sets a character quantity limit and selects character types to include
-function generatePassword() {
+function userSpecifications() {
   var userLimit = limitCheck(); // re-declares userLimit locally AND calls limitCheck to prompt the user to provide a returned value
   specialCheck();
   numericCheck();
   lowercaseCheck();
   uppercaseCheck();
   empty();
+  return userLimit;
+}
+
+function generatePassword(userLimit) {
+  // var userLimit = userSpecifications();
   var password = [];   // declares password as an empty array
   for (var i = 0; i < userLimit; i++) {   // randomly chooses an index location of selectedCharacters up to the number of the userLimit
     var randomizer = Math.floor(Math.random() * selectedCharacters.length);
@@ -71,7 +76,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();  // re-declares password locally AND calls generatePassword to prompt the user to provide inputs
+  var password = generatePassword(userLimit);  // re-declares password locally AND calls generatePassword to prompt the user to provide inputs
   var passwordText = document.querySelector("#password");
    passwordText.value = password;
  }
