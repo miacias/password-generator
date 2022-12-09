@@ -21,13 +21,15 @@ function specialCheck() {
   if (userSpecial) {
     selectedCharacters = selectedCharacters.concat(SPECIAL_CHARS);
   }
+  console.log(userSpecial);
 }
 
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
     selectedCharacters = selectedCharacters.concat(NUMERIC_CHARS);
-  } 
+  }
+  console.log(userNumeric);
 }
 
 function lowercaseCheck() {
@@ -35,6 +37,7 @@ function lowercaseCheck() {
   if (userLowercase) {
     selectedCharacters = selectedCharacters.concat(LOWERCASE_CHARS);
   }
+  console.log(userLowercase);
 }
 
 function uppercaseCheck() {
@@ -42,6 +45,7 @@ function uppercaseCheck() {
   if (userUppercase) {
     selectedCharacters = selectedCharacters.concat(UPPERCASE_CHARS);
   }
+  console.log(userUppercase);
 }
 
 // in case user mistakenly does not select any character type to be included in the password
@@ -53,7 +57,7 @@ function empty() {
 }
 
 // calls functions where user sets a character quantity limit and selects character types to include
-function userSpecifications() {
+function userCriteria() {
   var userLimit = limitCheck(); // re-declares userLimit locally AND calls limitCheck to prompt the user to provide a returned value
   specialCheck();
   numericCheck();
@@ -64,7 +68,6 @@ function userSpecifications() {
 }
 
 function generatePassword(userLimit) {
-  // var userLimit = userSpecifications();
   var password = [];   // declares password as an empty array
   for (var i = 0; i < userLimit; i++) {   // randomly chooses an index location of selectedCharacters up to the number of the userLimit
     var randomizer = Math.floor(Math.random() * selectedCharacters.length);
@@ -76,10 +79,13 @@ function generatePassword(userLimit) {
 
 // Write password to the #password input
 function writePassword() {
+  var userLimit = userCriteria();
+  console.log(selectedCharacters);
   var password = generatePassword(userLimit);  // re-declares password locally AND calls generatePassword to prompt the user to provide inputs
   var passwordText = document.querySelector("#password");
    passwordText.value = password;
- }
+  selectedCharacters = []; // resets selectedCharacters as an empty array (avoids infinite adding of characters in browser cache)
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
