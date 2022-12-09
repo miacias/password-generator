@@ -6,13 +6,13 @@
   --sunflower: #ffdd54;
   --blue-gray: #3b4954;
 }
-
+/* TESTING X2 */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-/* testing comment */
+
 html,
 body,
 .wrapper {
