@@ -102,3 +102,4 @@ generateButton.addEventListener("click", writePassword); // the event listener w
 copyPassword.addEventListener("click", (event) => {
   var content = document.getElementById("content-copy").textContent;
 })
+// test
