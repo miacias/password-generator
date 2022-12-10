@@ -9,11 +9,12 @@ var selectedCharacters = [];
 
 function limitCheck() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
+  /* testing why writing a word in the box "passes"
   console.log(userLimit);
   console.log(typeof userLimit);
   console.log(typeof Number(userLimit));
-  console.log(Number(userLimit));
-    if (typeof Number(userLimit) !== "number" || Object.is(Number(userLimit), NaN) === true) {
+  console.log(Number(userLimit)); */
+    if (typeof Number(userLimit) !== "number" || Object.is(Number(userLimit), NaN) === true) { // source https://www.samanthaming.com/tidbits/21-how-to-test-nan/ and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
       alert("Please input a number between 8 and 128 to continue.");
       userLimit = limitCheck(); // sets userLimit to call the function and erases original "bad" returned value to empty
     } 
