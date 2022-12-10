@@ -1,5 +1,6 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate"); // variable called generateBtn looks at the HTML document using a querySelector and finds the ID "generate." ID "generate" is attached to the on-screen generate password BUTTON
+var generateButton = document.querySelector("#generate");
+var copyPassword = document.querySelector("#card-body");
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -8,10 +9,19 @@ var selectedCharacters = [];
 
 function limitCheck() {
   var userLimit = prompt("Please choose from 8 to 128 characters to include.");
-  if (userLimit < 8 || userLimit > 128) {
-    userLimit = alert("This number must be between 8 and 128 to continue.");
-    limitCheck();
-  }
+  /* testing why writing a word in the box "passes"
+  console.log(userLimit);
+  console.log(typeof userLimit);
+  console.log(typeof Number(userLimit));
+  console.log(Number(userLimit)); */
+    if (typeof Number(userLimit) !== "number" || Object.is(Number(userLimit), NaN) === true) { // source https://www.samanthaming.com/tidbits/21-how-to-test-nan/ and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+      alert("Please input a number between 8 and 128 to continue.");
+      userLimit = limitCheck(); // sets userLimit to call the function and erases original "bad" returned value to empty
+    } 
+    if (userLimit < 8 || userLimit > 128) {
+      alert("This number must be between 8 and 128 to continue.");
+      userLimit = limitCheck(); // sets userLimit to call the function and erases original "bad" returned value to empty
+    }
   return userLimit; // returns a value from the limitCheck function
 }
 
@@ -87,4 +97,8 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
+generateButton.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
+
+copyPassword.addEventListener("click", (event) => {
+  var content = document.getElementById("content-copy").textContent;
+})

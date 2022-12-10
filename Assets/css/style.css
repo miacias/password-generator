@@ -1,7 +1,7 @@
 :root {
   --dark-purple: #5c4369;
-  --light-purple: #9e85ab;
-  --white-purple: #b8a5c2;
+  --light-purple: #b8a5c2;
+  --white-purple: #f0e4f7;
   --white: white;
   --sunflower: #ffdd54;
   --blue-gray: #3b4954;
@@ -40,7 +40,7 @@ header {
 }
 
 .card {
-  background-color: var(--white-purple);
+  background-color: var(--light-purple);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -55,7 +55,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--white-purple);
   height: 2px;
 }
 
@@ -71,7 +71,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--white-purple);
   height: 2px;
 }
 
@@ -121,7 +121,7 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dashed var(--white-purple);
   border-radius: 6px;
   resize: none;
   overflow: hidden;
