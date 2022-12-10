@@ -1,6 +1,6 @@
 // Assignment Code
 var generateButton = document.querySelector("#generate");
-var copyPassword = document.querySelector("#card-body");
+// var copyPassword = document.querySelector("#card-body");
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -67,6 +67,10 @@ function empty() {
 
 // calls functions where user sets a character quantity limit and selects character types to include
 function userCriteria() {
+  var make = confirm("Make password?");
+  if (!make) {
+    return;
+  }
   var userLimit = limitCheck(); // re-declares userLimit locally AND calls limitCheck to prompt the user to provide a returned value
   specialCheck();
   numericCheck();
@@ -102,4 +106,3 @@ generateButton.addEventListener("click", writePassword); // the event listener w
 copyPassword.addEventListener("click", (event) => {
   var content = document.getElementById("content-copy").textContent;
 })
-// test
