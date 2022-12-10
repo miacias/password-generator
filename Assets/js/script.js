@@ -15,11 +15,11 @@ function limitCheck() {
   console.log(Number(userLimit));
     if (typeof Number(userLimit) !== "number" || Object.is(Number(userLimit), NaN) === true) {
       alert("Please input a number between 8 and 128 to continue.");
-      limitCheck();
+      userLimit = limitCheck(); // sets userLimit to call the function and erases original "bad" returned value to empty
     } 
     if (userLimit < 8 || userLimit > 128) {
       alert("This number must be between 8 and 128 to continue.");
-      limitCheck();
+      userLimit = limitCheck(); // sets userLimit to call the function and erases original "bad" returned value to empty
     }
   return userLimit; // returns a value from the limitCheck function
 }
