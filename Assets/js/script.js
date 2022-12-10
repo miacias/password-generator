@@ -67,6 +67,10 @@ function empty() {
 
 // calls functions where user sets a character quantity limit and selects character types to include
 function userCriteria() {
+  var make = confirm("Make password?");
+  if (!make) {
+    return;
+  }
   var userLimit = limitCheck(); // re-declares userLimit locally AND calls limitCheck to prompt the user to provide a returned value
   specialCheck();
   numericCheck();
