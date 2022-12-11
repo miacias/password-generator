@@ -1,6 +1,6 @@
 // Assignment Code
-var generateButton = document.querySelector("#generate");
-var copyPassword = document.querySelector("#card-body");
+const generateButton = document.querySelector("#generate");
+
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -98,6 +98,19 @@ function writePassword() {
 
 generateButton.addEventListener("click", writePassword);
 
-copyPassword.addEventListener("click", (event) => {
-  var content = document.getElementById("content-copy").textContent;
-})
+// const copyPassword = document.querySelector("#password");
+// const copyButton = document.getElementById("copy");
+
+
+// VERSION 1 TEST: NOT FUNCTIONAL
+// copyButton.addEventListener("click", (event) => {
+//   var getPassword = document.getElementById("#password").textContent;
+//   navigator.clipboard.writeText("#password");
+// })
+
+// VERSION 2 TEST: NOT FUNCTIONAL
+// copyPassword.addEventListener("copy", (event) => {
+//   var getPassword = document.getSelection();
+//   event.clipboardData.setData("text/plain", selection.toString());
+//   event.preventDefault();
+// })
