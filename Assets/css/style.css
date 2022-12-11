@@ -102,9 +102,9 @@ button[disabled] {
   background: #c0c7cf;
 }
 
-.float-right {
+/* .float-right {
   float: right;
-}
+} */
 
 #password {
   -webkit-appearance: none;

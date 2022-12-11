@@ -1,6 +1,6 @@
 // Assignment Code
-var generateButton = document.querySelector("#generate");
-var copyPassword = document.querySelector("#card-body");
+const generateButton = document.querySelector("#generate");
+
 const SPECIAL_CHARS = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "\\", "^", "_", "{", "|", "}", "~"];
 const NUMERIC_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const LOWERCASE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -27,37 +27,29 @@ function limitCheck() {
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
-    // selectedCharacters = selectedCharacters.concat(SPECIAL_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[0]);
   }
-  // console.log(userSpecial);
 }
 
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
-    // selectedCharacters = selectedCharacters.concat(NUMERIC_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[1]);
   }
-  // console.log(userNumeric);
 }
 
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
-    // selectedCharacters = selectedCharacters.concat(LOWERCASE_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[2]);
   }
-  // console.log(userLowercase);
 }
 
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
   if (userUppercase) {
-    // selectedCharacters = selectedCharacters.concat(UPPERCASE_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[3]);
   }
-  // console.log(userUppercase);
 }
 
 // in case user mistakenly does not select any character type to be included in the password
@@ -104,9 +96,21 @@ function writePassword() {
    selectedCharacterTypes = []; // resets selectedCharacterTypes as an empty array (avoids infinite adding of characters in browser cache)
 }
 
-// Add event listener to generate button
-generateButton.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
+generateButton.addEventListener("click", writePassword);
 
-// copyPassword.addEventListener("click", (event) => {
-//   var content = document.getElementById("content-copy").textContent;
+// const copyPassword = document.querySelector("#password");
+// const copyButton = document.getElementById("copy");
+
+
+// VERSION 1 TEST: NOT FUNCTIONAL
+// copyButton.addEventListener("click", (event) => {
+//   var getPassword = document.getElementById("#password").textContent;
+//   navigator.clipboard.writeText("#password");
+// })
+
+// VERSION 2 TEST: NOT FUNCTIONAL
+// copyPassword.addEventListener("copy", (event) => {
+//   var getPassword = document.getSelection();
+//   event.clipboardData.setData("text/plain", selection.toString());
+//   event.preventDefault();
 // })
