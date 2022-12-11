@@ -27,37 +27,29 @@ function limitCheck() {
 function specialCheck() {
   var userSpecial = confirm("Would you like to include special characters?");
   if (userSpecial) {
-    // selectedCharacters = selectedCharacters.concat(SPECIAL_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[0]);
   }
-  // console.log(userSpecial);
 }
 
 function numericCheck() {
   var userNumeric = confirm("Would you like to include numbers?");
   if (userNumeric) {
-    // selectedCharacters = selectedCharacters.concat(NUMERIC_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[1]);
   }
-  // console.log(userNumeric);
 }
 
 function lowercaseCheck() {
   var userLowercase = confirm("Include lowercase letters?");
   if (userLowercase) {
-    // selectedCharacters = selectedCharacters.concat(LOWERCASE_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[2]);
   }
-  // console.log(userLowercase);
 }
 
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
   if (userUppercase) {
-    // selectedCharacters = selectedCharacters.concat(UPPERCASE_CHARS);
     selectedCharacterTypes.push(ALL_CHARS[3]);
   }
-  // console.log(userUppercase);
 }
 
 // in case user mistakenly does not select any character type to be included in the password
