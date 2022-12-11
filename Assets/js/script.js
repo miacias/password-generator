@@ -85,7 +85,6 @@ function generatePassword(userLimit) {
   var password = [];   // declares password as an empty array
   for (var i = 0; i < userLimit; i++) {   // randomly chooses an index location of selectedCharacters up to the number of the userLimit
     randomCharType = Math.floor(Math.random() * selectedCharacters.length);
-    console.log(randomCharType = Math.floor(Math.random() * selectedCharacters.length))
 
     // make a variable where the randomCharType can push its array contents into for selection
     ALL_CHARS[randomCharType]
