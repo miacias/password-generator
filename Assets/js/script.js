@@ -50,6 +50,7 @@ function lowercaseCheck() {
   }
   // console.log(userLowercase);
 }
+// test
 
 function uppercaseCheck() {
   var userUppercase = confirm("Include uppercase letters?");
