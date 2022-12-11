@@ -104,9 +104,8 @@ function writePassword() {
    selectedCharacterTypes = []; // resets selectedCharacterTypes as an empty array (avoids infinite adding of characters in browser cache)
 }
 
-// Add event listener to generate button
-generateButton.addEventListener("click", writePassword); // the event listener watches "click" on the generateBtn for when it is clicked, THEN writePassword is called, which begins generatePassword
+generateButton.addEventListener("click", writePassword);
 
-// copyPassword.addEventListener("click", (event) => {
-//   var content = document.getElementById("content-copy").textContent;
-// })
+copyPassword.addEventListener("click", (event) => {
+  var content = document.getElementById("content-copy").textContent;
+})
