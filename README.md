@@ -3,9 +3,9 @@ Password Generator (JavaScript)
 
 ## Description 
 
- Caput Draconis is a password generator designed to match to the User's desire of what is included and the length of characters that will be used. This project is named "Caput Draconis" after the Lady In The Painting from Harry Potter who holds the password to Gryffindoor Commons. The generator draws from four character types: special characters, numeric characters, upper-, and lowercase letters.  
+ Caput Draconis is a password generator designed to match to the User's desire for a totally unique and secure password. Users have control over what types of characters will be included and the length of characters that will be used. This project is named "Caput Draconis" after the beloved Lady In The Painting from Harry Potter who holds the password to Gryffindoor Commons. The generator draws from four character types: special characters (supplied by Open Web Application Security Project® or OWASP), numeric characters, upper-, and lowercase letters.
  
- The motivation behind this project was to design an easy way for users to generate entirely randomized passwords in just a few clicks. Each character type is equitably represented from character types that the user selects to include in their customized password, ensuring that even though there are significantly more letters than numbers to choose from, each character type has an equal chance of appearing in the password. This password generator is designed to help Users no longer have to waste time inventing passwords on their own, and it also solves the problem and very real risk of using a predictable password. 
+ The motivation behind this project was to design an easy way for users to generate entirely randomized passwords in just a few clicks. Each character type is equitably represented from the menu of character types  the user selects to include in their customized password, ensuring that even though there are significantly more letters than numbers to choose from, each character type has an equal chance of appearing in the password. This password generator is designed as a tool to help Users no longer have to waste time inventing passwords on their own, and it also solves the problem and very real cyber security risk of using a predictable password. 
  
  In developing this random password generator, I learned how important it is to be explicit while coding so the program will respond with precision each time it is used. I also learned to be wary of potential ways that code can break - whether it be by incorrect inputs by the user or getting lost in recursion. One of the most important takeaways I have from approaching this project is that there is always more that can be done: streamlining code, adding features, and adding other inventive ideas.
 
@@ -23,25 +23,26 @@ Password Generator (JavaScript)
     - "Cancel" on a Character Question means you do not want to include something
  3. A password will appear in the box for you to record in a safe location.
  4. It is possible to make multiple passwords with new criteria each time the "Generate Password" button is clicked and the prompts are completed. However, previous passwords will disappear.
- 
-(( Include screenshots as needed. ))
 
- 
- 
+   ![Lavender purple screenshot with lighter focal point containing the password generator. A sunflower yellow button reading "Generate Password" rests below a white textbox with placeholder text "Your Secure Password."](./Assets/images/screencapture-password-generator.png) 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: 
 
- 
- 
+## Features 
 
-   ```md 
+ - Calculates password from 1 to 4 different character types regardless of how many character types are set to be included or the set password length
+ - Can be used multiple times to create infinite iterations of unique, case-sensitive passwords
+ - Supports fail cases such as if the user decides to cancel password generation after the first prompt or if the user accidentally inputs something other than a number for password length
 
-   ![alt text](assets/images/screenshot.png) 
 
-   ``` 
+## Roadmap
 
- 
- 
+ I am working through a series of weekly projects and hope to return to this one, though I may not have the time to come back to this project. Here are some of the desired features I would like to add in the future in no particular order:
+
+ - A readout summarizing user specifications after the generated password prints to the page (i.e. set password length and characters included and excluded)
+ - An option to run the generator again with duplicate selections (to skip repetition of setup prompts and confirm messages)
+ - A customization of prompt button names from "OK, Cancel" to more fitting words via jQuery - OR adapting the generator prompt/confirm messages into a form so as to be less invasive to User experience
+ - An event listener that copies the textbox readout of the generated password to clipboard on click
+
 
 ## Credits 
 
@@ -56,57 +57,3 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## License 
 
 Please refer to the LICENSE in the repo.
- 
- 
-
---- 
-
- 
- 
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections. 
-
- 
- 
-
-## Badges 
-
- 
- 
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath) 
-
- 
- 
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time. 
-
- 
- 
-
-## Features 
-
- 
- 
-
-If your project has a lot of features, list them here. 
-
- 
- 
-
-## How to Contribute 
-
- 
- 
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer. 
-
- 
- 
-
-## Tests 
-
- 
- 
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here. 
