@@ -12,17 +12,18 @@ Password Generator (JavaScript)
 
 ## Installation 
 
- N/A. [Deployed site here!](link to live site)
+ N/A. [Deployed site here!](https://miacias.github.io/caput-draconis-password-generator)
  
 
 ## Usage 
 
  1. Click the "Generate Password" button on the screen.
- 2. Follow the prompts in the pop-up windows to provide the generator information on what you want in your password and how long you want it to be.
-    - "Ok" on a Character Question means you want to include something
-    - "Cancel" on a Character Question means you do not want to include something
- 3. A password will appear in the box for you to record in a safe location.
- 4. It is possible to make multiple passwords with new criteria each time the "Generate Password" button is clicked and the prompts are completed. However, previous passwords will disappear.
+ 2. Follow the prompts in the pop-up windows to provide the generator information on what to include in the new password and how long it is to be.
+    - "Ok" on a Character Question means to include something
+    - "Cancel" on a Character Question to not include something
+ 3. A password will appear in the box to record in a safe location, such as an offline notebook.
+ 4. It is possible to solicit multiple passwords with new (or same) criteria each time the "Generate Password" button is clicked and the prompts are completed. 
+    - NOTE: For security reasons, pevious passwords will disappear from the text box when a new password is created, so be sure to record offline before generating a new password.
 
    ![Lavender purple screenshot with lighter focal point containing the password generator. A sunflower yellow button reading "Generate Password" rests below a white textbox with placeholder text "Your Secure Password."](./Assets/images/screencapture-password-generator.png) 
 
