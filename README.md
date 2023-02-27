@@ -1,5 +1,5 @@
 # password-generator
-Customizeable randomized password generator (JavaScript)
+Customizable randomized password generator (JavaScript)
 
 ## Description 
 
