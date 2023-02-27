@@ -1,5 +1,5 @@
-# caput-draconis-password-generator
-Password Generator (JavaScript)
+# password-generator
+Customizeable randomized password generator (JavaScript)
 
 ## Description 
 
